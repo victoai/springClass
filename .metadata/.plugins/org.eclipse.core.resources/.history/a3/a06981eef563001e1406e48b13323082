@@ -1,0 +1,19 @@
+package com.acorn.day2.api;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ApiController {
+ 
+	@GetMapping("/likes")
+	public  ArrayList<String> getList(){
+		ArrayList<String> likes = new ArrayList<>();
+		likes.add("커피");
+		likes.add("책");
+		likes.add("무빙");	
+		return likes;		
+	}	
+}

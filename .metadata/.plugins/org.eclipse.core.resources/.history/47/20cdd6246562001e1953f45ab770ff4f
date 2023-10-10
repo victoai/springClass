@@ -1,0 +1,31 @@
+package com.acorn.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HelloController {
+	 
+	@GetMapping("/hello")
+	public String hi() {		
+		return "hi";   //  WEB-INF/views/hi.jsp view   응답
+	}
+	
+	
+	@GetMapping("/hi")   // /hi?id=test&pw=0000
+	public String  h2( String id, String pw) {		
+		System.out.println(id + pw);
+		return "hi2";
+	}
+		
+	@GetMapping("/hi2")// /hi?id=test&pw=0000   =>user객체 생성해서 바인딩
+	public String h3 (User user) {		
+		System.out.println( user);
+		return  "hi3";  
+	}
+	
+	
+	 
+	
+
+}

@@ -1,0 +1,9 @@
+package com.acorn.day2.api;
+
+
+@Controller
+public class ApiController {
+
+	
+	
+}

@@ -1,0 +1,6 @@
+package com.acorn.test;
+
+@Controller
+public class AController {
+
+}
