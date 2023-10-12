@@ -18,13 +18,13 @@ public class 폼데이터읽기   {
     public String form(  )   {	
 		return "formView";
 	}
+	
 
 	@GetMapping("/formRegisterGet")
      void test2(HttpServletRequest request ) throws ServletException, IOException {
       
 		String id  = request.getParameter("id");
-		String pw =  request.getParameter("pw");
-		
+		String pw =  request.getParameter("pw");		
 		
 		System.out.println("Request header: 요청헤더에서 값 추출");
 		System.out.println( id);
