@@ -9,6 +9,8 @@ C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclips
 \day1\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2808595563.index
 \day5Exception\src\main\java
+C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1679987527.index
+\batisPrac\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2305221031.index
 \uploadSample\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1937528655.index
@@ -29,8 +31,12 @@ C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclips
 \day3\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1918057486.index
 \cookiPrj\src\main\java
+C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1603187309.index
+\openApi\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2119003248.index
 \di\src\main\java
+C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3038947121.index
+\batisPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\843690767.index
 \helloPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\803773632.index

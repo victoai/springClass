@@ -25,6 +25,9 @@
     <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.acorn.open.uis.ApiExplorer2"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.acorn.open.민규.ApiExplorerM"/>
 </qualifiedTypeNameHistroy>

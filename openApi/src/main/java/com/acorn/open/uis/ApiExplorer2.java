@@ -10,7 +10,9 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApiExplorer2 {
     public String getDatas() throws IOException {
     	

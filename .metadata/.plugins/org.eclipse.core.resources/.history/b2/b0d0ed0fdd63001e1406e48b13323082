@@ -1,7 +1,0 @@
-package com.acorn.day2;
-
-
-@Controller
-public class TestController {
-
-}
