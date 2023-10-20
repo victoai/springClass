@@ -108,6 +108,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\testprj2"/>
+			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\intercepterPrj"/>
+			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\cartBatis"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\openApi"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\cookiPrj"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\uploadSample"/>
@@ -117,8 +120,8 @@
 	</section>
 	<section name="CleanDialogSettings">
 		<item key="TOGGLE_SELECTED" value="false"/>
-		<item key="DIALOG_WIDTH" value="500"/>
-		<item key="DIALOG_HEIGHT" value="389"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="DIALOG_WIDTH" value="666"/>
+		<item key="DIALOG_HEIGHT" value="482"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
 	</section>
 </section>

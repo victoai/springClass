@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.TestMapper">  
+     
+     <insert id="insert" parameterType="Test">
+      INSERT INTO test2
+          (test_id, test_name, test_date )
+      VALUES
+          (#{id}, #{name}, #{date} )
+    </insert>
+  
+  	<delete id="delete" parameterType="String">
+  		delete from test2 where test_id= #{id}
+  	</delete>
+  	
+  	<!-- UPDATE 문 -->
+    <update id="updateTestDate" parameterType="Test">
+        UPDATE test2 SET test_date = TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') WHERE test_id = #{id}
+    </update>
+</mapper>

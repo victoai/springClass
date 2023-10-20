@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
  
 
-@Repository
+
 public class RepositoryRealImp  implements MemberRepositoryI {
 	
 	@Autowired
