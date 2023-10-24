@@ -108,6 +108,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\testprj3"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\testprj2"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\intercepterPrj"/>
 			<item value="C:\Users\user\Documents\자바풀스택\스프링\springws\cartBatis"/>

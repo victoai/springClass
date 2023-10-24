@@ -15,12 +15,16 @@ C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclips
 \day5Exception\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1679987527.index
 \batisPrac\src\main\java
+C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\931995279.index
+\cssPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3503747155.index
 \mgPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1259912154.index
 \intercepterPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2305221031.index
 \uploadSample\src\main\java
+C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1517102481.index
+\uploadTestPrj\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1937528655.index
 \day1\src\main\java
 C:\Users\user\Documents\자바풀스택\스프링\springws\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1174674650.index

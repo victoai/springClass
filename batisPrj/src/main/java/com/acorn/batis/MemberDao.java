@@ -45,6 +45,10 @@ public class MemberDao  {
         return session.insert(namespace+"insert", dto);
     } // int insert(String statement, Object parameter)
 
+    public int inserts(Map<String,String> dto) throws Exception {
+        return session.insert(namespace+"insertS", dto);
+    } // int insert(String statement, Object parameter)
+
     
     public Member select(Integer bno) throws Exception {
         return session.selectOne(namespace + "select", bno);

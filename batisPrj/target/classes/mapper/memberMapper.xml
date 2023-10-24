@@ -33,7 +33,22 @@
     </delete>
 
 
+
     <delete id="delete" parameterType="String">
         DELETE FROM membertb  WHERE id = #{id} 
     </delete>
+    
+    
+    
+	<insert id="insertS" parameterType="java.util.Map">
+    <!-- 이 부분에서 시퀀스의 다음 값을 가져옵니다. -->
+		    <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+		        SELECT  'test' || testseq.NEXTVAL  FROM dual
+		    </selectKey>
+		    
+		    <!-- 가져온 시퀀스 값을 사용하여 데이터를 삽입합니다. -->
+		    INSERT INTO tests (id, pw, name)
+		    VALUES (#{id}, #{pw}, #{name})
+	</insert>
+	
 </mapper>

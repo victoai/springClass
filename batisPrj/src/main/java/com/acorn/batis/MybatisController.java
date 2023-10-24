@@ -1,10 +1,11 @@
 package com.acorn.batis;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import lombok.extern.log4j.Log4j;
  
 
  
@@ -56,6 +57,22 @@ public class MybatisController {
 			}
 	}
 	
+	@RequestMapping("/inserts")
+	public void test3s( ) {		
+		 	try {
+		 		
+		 		
+		 		Map<String, String> item= new HashMap<String, String>();
+		  
+		 		item.put( "pw", "000");
+		 		item.put( "name" , "홍길");
+		 		 
+		 		dao.inserts(item) ;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
 	
 	@RequestMapping("/delete")
 	public void test4( ) {		
