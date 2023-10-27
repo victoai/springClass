@@ -29,7 +29,7 @@ public class RequestParamEx {
 	}
 
 	@RequestMapping("/rParam2")
-  	//public String param2(@RequestParam(value="id", required=false) String id) {   // 아래와 동일 
+  	//public String param2(@RequestParam(value="Rid", required=false) String id) {   // 아래와 동일 
  	public String param2( String id) {   
 		System.out.println("id=" +  id); 		 
 		return "view2";

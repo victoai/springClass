@@ -69,6 +69,8 @@ public class ApiExamSearchBlog4 {
 		 
 		System.out.print(result);
 		JSONObject obj = new JSONObject( result);
+ 
+		
 		JSONArray  arr  = obj.getJSONArray("items");
 		
 		ArrayList<ItemDto> list = new ArrayList<>();

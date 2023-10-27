@@ -11,9 +11,7 @@ public class DBTest1 {
 		String url="jdbc:oracle:thin:@localhost:1521:testdb";
 		String user="scott";
 		String password="tiger";
-		
-		
-		
+		 
 		 
 			Class.forName(driver);
 			Connection con  =DriverManager.getConnection(url, user, password);
@@ -27,9 +25,6 @@ public class DBTest1 {
 				System.out.println( rs.getString(2));
 				System.out.println( rs.getString(3));
 				System.out.println( rs.getString(4));
-			} 
-		
-
+			}  
 	}
-
 }

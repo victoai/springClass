@@ -3,10 +3,14 @@
 <aop-project name="uploadSample"/>
 <aop-project name="testprj3"/>
 <aop-project name="testprj"/>
+<aop-project name="jtPrj"/>
 <aop-project name="batisPrj2"/>
 <aop-project name="batisPrj"/>
 <aop-project name="day1"/>
+<aop-project name="day9"/>
+<aop-project name="test"/>
 <aop-project name="cartBatis"/>
+<aop-project name="transPrj"/>
 <aop-project name="day5Cookie"/>
 <aop-project name="openApi"/>
 <aop-project name="day2"/>
@@ -22,7 +26,11 @@
 <aop-project name="mgPrj"/>
 <aop-project name="day7intefacePrj"/>
 <aop-project name="testprj2"/>
+<aop-project name="tranPrj"/>
 <aop-project name="helloPrj"/>
+<aop-project name="webchat"/>
+<aop-project name="dbTran"/>
+<aop-project name="batisTran"/>
 <aop-project name="cssPrj"/>
 <aop-project name="day4"/>
 <aop-project name="controllerPrj"/>

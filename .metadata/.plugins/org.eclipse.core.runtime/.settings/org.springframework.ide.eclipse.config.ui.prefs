@@ -23,6 +23,7 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/day7intefacePrj/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/day7intefacePrj/src/main/webapp/WEB-INF/spring/test.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/day7intefacePrj/src/main/webapp/WEB-INF/spring/test2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/day9/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/di/src/main/java/com/acron/di/setting.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/di/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/di/src/main/webapp/WEB-INF/spring/appServlet/setting.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
@@ -32,4 +33,7 @@
 //com.springsource.config.ui.prefs.activePageIndex\:/helloPrj/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/intercepterPrj/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/intercepterPrj/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/tranPrj/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/webchat/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/webchat/src/main/webapp/WEB-INF/spring/ws-config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 eclipse.preferences.version=1
