@@ -36,6 +36,7 @@
     }
      
     function onMessage(evt) {
+    	console.log( evt);
         var data = evt.data;
         if (data.substring(0, 4) == "msg:") {
         	appendRecvMessage(data.substring(4));
@@ -91,6 +92,7 @@
    $(document).ready( function(){    
 	 
            $('#message').keypress(function(event){
+        	   
 		   var keycode =  event.keyCode  ;		            
 		  
 		       if(keycode == '13'){		    	  

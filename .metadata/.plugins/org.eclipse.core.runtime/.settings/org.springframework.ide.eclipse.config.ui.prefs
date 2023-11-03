@@ -1,3 +1,5 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/CornMarket/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/CornMarket/src/main/webapp/WEB-INF/spring/websocket_config.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/batisPrac/src/main/webapp/WEB-INF/spring/root-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/batisPrac/src/main/webapp/WEB-INF/spring/test.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>
 //com.springsource.config.ui.prefs.activePageIndex\:/batisPrac/src/main/webapp/WEB-INF/spring/test2.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<activePage index\="0"/>

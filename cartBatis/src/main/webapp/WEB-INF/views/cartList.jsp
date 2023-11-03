@@ -49,19 +49,27 @@
 
 <c:forEach var="item"  items="${cartMap.goodsList}" varStatus="cnt">
 <c:set var="cartQty" value="${cartList[cnt.count-1].cartQty}"></c:set>
-
-<tr>
-<td>선택  <input type="checkbox" name="ck" checked></td>
-<td>상품코드 :<input type="text"  name="goodsNo" value="${item.goodsNo}"></td>
-<td>상품명: ${item.name}</td>
-<td> 수량:
- <input type="text" name="goods_Qty" value="${cartQty}">
- <!--  hidden 태그  장바구니번호: 삭제, 변경할 때 사용 
- h_orderItem은 선택한 상품의 상품번호와: 수량을 담아서 서버로 보냄
- -->
- <input type="hidden" name="h_orderItem">
- 장바구니번호:<input type="hidden"  name="h_cartNo" value= "${cartList[cnt.count-1].cartNO}"></td>
- 
+		
+		<tr>
+		<td>선택  <input type="checkbox" name="ck" checked></td>
+		<td>상품코드 :<input type="text"  name="goodsNo" value="${item.goodsNo}"></td>
+		<td>상품명: ${item.name}</td>
+		<td> 수량:
+		 <input type="text" name="goods_Qty" value="${cartQty}">
+		 <!--  hidden 태그  장바구니번호: 삭제, 변경할 때 사용 
+		 h_orderItem은 선택한 상품의 상품번호와: 수량을 담아서 서버로 보냄
+		 -->
+		 <input type="hidden" name="h_orderItem">
+		 <!-- type=hidden -->
+		 장바구니번호:<input type="text"  name="h_cartNo" value= "${cartList[cnt.count-1].cartNO}"></td>
+		 
+		 <td>
+		 	 옵션1 필수 :   양념
+		 </td>
+		 	 <td>
+		 	 옵션1 선택 :   콜라
+		 </td>
+		 
 </tr>
 </c:forEach>
  <tr>

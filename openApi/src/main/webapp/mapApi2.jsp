@@ -8,7 +8,7 @@
     
 </head>
 <body>
-<div id="map" style="width:100%;height:350px;"></div>
+<div id="map" style="width:30%;height:350px;"></div>
 <p><em>지도를 클릭해주세요!</em></p> 
 <div id="clickLatlng"></div>
 
