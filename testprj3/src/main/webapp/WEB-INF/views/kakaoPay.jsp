@@ -12,6 +12,10 @@
 <h1> kakaoPay api 이용하기 </h1>
  
 <form method="post" action="/prac/kakaoPay">
+
+		
+
+
     <button>카카오페이로 결제하기</button>
 </form>
 

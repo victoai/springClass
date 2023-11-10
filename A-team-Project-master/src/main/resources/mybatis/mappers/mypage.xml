@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mapper.mypage">
+	<resultMap type="myReviewDTO" id="MyreviewResult">
+		<result property="re_no" column="re_no"></result>
+		<result property="re_score" column="re_score"></result>
+		<result property="re_content" column="re_content"></result>
+		<result property="re_writeDate" column="re_writeDate"></result>
+		<result property="re_img" column="re_img"></result>
+		<result property="id" column="id"></result>
+		<result property="lod_no" column="lod_no"></result>
+		<result property="act_no" column="act_no"></result>
+		<result property="fd_no" column="fd_no"></result>
+		<result property="tr_no" column="tr_no"></result>
+	</resultMap>
+	
+	<select id="reviewList" resultType="com.spring.project.mypage.dto.ReviewDTO">
+		<![CDATA[
+			select r.*, f.fd_title||l.lod_title||a.ac_title||t.tr_title as title from review r,food f, lodging_list l, activity a, tour t
+   	 		where (r.fd_no = f.fd_no(+) and r.lod_id = l.lod_id(+) and r.ac_no = a.ac_no(+) and r.tr_no = t.tr_no(+)) and r.id=#{id}
+		]]> 
+	</select>
+	
+	<resultMap type="myReservationDTO" id="MyreservationResult">
+		<result property="air_no" column="air_no"></result>
+		<result property="air_airline" column="air_airline"></result>
+		<result property="air_date" column="air_date"></result>
+		<result property="air_departTime" column="air_departTime"></result>
+		<result property="air_arrivalTime" column="air_arrivalTime"></result>
+		<result property="air_departPlace" column="air_departPlace"></result>
+		<result property="air_arrivalPlace" column="air_arrivalPlace"></result>
+		<result property="air_price" column="air_price"></result>
+		<result property="id" column="id"></result>
+		<result property="name" column="name"></result>
+		<result property="birth" column="birth"></result>
+		<result property="payment" column="payment"></result>
+	</resultMap>
+	
+	<select id="reservationcheck" resultType="com.spring.project.mypage.dto.MyReservationDTO">
+		<![CDATA[
+			select * from airplane_res where id=#{id}
+		]]>
+	</select>
+	
+	<resultMap type="lodReservationDTO" id="lodreservationResult">
+		<result property="lod_id" column="lod_id"></result>
+		<result property="id" column="id"></result>
+		<result property="res_name" column="res_name"></result>
+		<result property="res_tel" column="res_tel"></result>
+		<result property="lod_title" column="lod_title"></result>
+		<result property="r_title" column="r_title"></result>
+		<result property="lod_checkIn" column="lod_checkIn"></result>
+		<result property="lod_checkOut" column="lod_checkOut"></result>
+		<result property="res_from" column="res_from"></result>
+		<result property="res_to" column="res_to"></result>
+		<result property="payment" column="payment"></result>
+		<result property="price" column="price"></result>
+	</resultMap>
+	
+	<select id="lodreservationcheck" resultType="lodReservationDTO">
+		<![CDATA[
+			select * from lodging_res where id=#{id}
+		]]>
+	</select>
+	
+	<select id="schedulecheck" resultType="travleDTO" parameterType="String">
+		<![CDATA[
+			select * from schedule where id=#{id}
+		]]>
+	</select>
+	
+	<select id="travlecheck" resultType="pickDTO">
+		<![CDATA[
+			 select * from    
+			(select m.*, f.fd_title||l.lod_title||a.ac_title||t.tr_title as title 
+			from mypick m,food f, lodging_list l, activity a, tour t
+   			 where  (m.fd_no = f.fd_no(+) and m.lod_id = l.lod_id(+) and 
+   			 m.ac_no = a.ac_no(+) and m.tr_no = t.tr_no(+))  and m.id=#{id}) p left join 
+   			 schedule s on p.title=s.title where s.title is null
+		]]>
+	</select>
+	
+	<insert id="insertTravle" parameterType="travleDTO">
+		<![CDATA[
+			insert into schedule values(#{id},#{day},#{title})
+		]]>
+	</insert>
+	
+	<update id="updateTravle" parameterType="travleDTO">
+		<![CDATA[
+			update schedule set day=#{day},title=#{title} where id=#{id} and title=#{title}
+		]]>
+	</update>
+	
+	<delete id="deleteTravle" parameterType="travleDTO">
+		<![CDATA[
+			delete from schedule where id=#{id} and title=#{title} and day=#{day}
+		]]>
+	</delete>
+	
+	
+	<delete id="reviewDel" parameterType="int">
+		<![CDATA[
+			delete from review where re_no=#{re_no}
+		]]>
+	</delete>
+	
+	<select id="reviewModForm" parameterType="int" resultType="myReviewDTO">
+		<![CDATA[
+			select * from review where re_no=#{re_no}
+		]]>
+	</select>
+	
+	<update id="modReview" parameterType="myReviewDTO">
+		<![CDATA[
+			update review set re_score=#{re_score}, re_content=#{re_content} where re_no=#{re_no}
+		]]>
+	</update>
+	
+</mapper>

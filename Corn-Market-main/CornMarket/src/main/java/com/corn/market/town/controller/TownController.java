@@ -2,6 +2,7 @@ package com.corn.market.town.controller;
 
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +21,7 @@ public class TownController {
 
 	//동네인증 페이지
 	@GetMapping("/town")
-	public String townCertificationGET() {
-		
+	public String townCertificationGET() {		
 		return "town/popup_profile_mytown";
 	}
 	
@@ -37,5 +37,6 @@ public class TownController {
 		townService.deleteAndInputAddress(town);
 		return "redirect:/town";
 	}
+	
 	
 }

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+ 	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="side" value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+	</definition> 
+	
+	<definition name="/main/main" extends="baseLayout">
+		<put-attribute name="title" value="메인페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp" />
+	</definition>
+	
+	<definition name="/main/introduce" extends="baseLayout">
+		<put-attribute name="title" value="제주가고싶조 소개글" />
+		<put-attribute name="body" value="/WEB-INF/views/main/introduce.jsp" />
+	</definition>
+
+	<definition name="/main/support" extends="baseLayout">
+		<put-attribute name="title" value="1:1문의하기" />
+		<put-attribute name="body" value="/WEB-INF/views/main/support.jsp" />
+	</definition>
+	
+	<definition name="/search/search" extends="baseLayout">
+		<put-attribute name="title" value="검색결과" />
+		<put-attribute name="body" value="/WEB-INF/views/main/search.jsp" />
+	</definition>
+	
+ 	<definition name="/food/foodmain" extends="baseLayout">
+		<put-attribute name="title" value="먹으멍_맛집" />
+		<put-attribute name="body" value="/WEB-INF/views/food/foodmain.jsp" />
+	</definition>
+	
+	<definition name="/food/cafe" extends="baseLayout">
+		<put-attribute name="title" value="먹으멍_카페" />
+		<put-attribute name="body" value="/WEB-INF/views/food/cafe.jsp" />
+	</definition>
+	
+	<definition name="food/resDetail" extends="baseLayout">
+		<put-attribute name="title" value="먹으멍_맛집_상세페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/food/resDetail.jsp" />
+	</definition>
+	
+	<definition name="food/reviewForm" extends="baseLayout">
+		<put-attribute name="title" value="먹으멍_맛집_리뷰" />
+		<put-attribute name="body" value="/WEB-INF/views/food/reviewForm.jsp" />
+	</definition>
+	
+	<definition name="/member/loginForm" extends="baseLayout">
+		<put-attribute name="title" value="로그인" />
+		<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp" />
+	</definition>
+	  
+	<definition name="/member/memberForm" extends="baseLayout">
+		<put-attribute name="title" value="회원가입" />
+		<put-attribute name="body" value="/WEB-INF/views/member/memberForm.jsp" />
+	</definition>
+	
+	<definition name="/member/findIdForm" extends="baseLayout">
+		<put-attribute name="title" value="아이디 찾기" />
+		<put-attribute name="body" value="/WEB-INF/views/member/findIdForm.jsp" />
+	</definition>
+
+	<definition name="/member/findPwdForm" extends="baseLayout">
+		<put-attribute name="title" value="패스워드 찾기" />
+		<put-attribute name="body" value="/WEB-INF/views/member/findPwdForm.jsp" />
+	</definition>
+	
+	<definition name="/event/airmain" extends="baseLayout">
+		<put-attribute name="title" value="이벤트" />
+		<put-attribute name="body" value="/WEB-INF/views/event/airmain.jsp" />
+	</definition>
+	
+	<definition name="event/airDetail" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_항공_상세페이지_가는편" />
+		<put-attribute name="body" value="/WEB-INF/views/event/airDetail.jsp" />
+	</definition>
+	
+	<definition name="event/checkReserv" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_항공_예매내용확인하기" />
+		<put-attribute name="body" value="/WEB-INF/views/event/checkReserv.jsp" />
+	</definition>
+	
+	<definition name="/event/lodmain" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodmain.jsp" />
+	</definition>
+	
+	<definition name="event/lodDetail" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박_상세" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodDetail.jsp" />
+	</definition>
+	
+	<definition name="event/lodInfo" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박_상세_룸정보" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodInfo.jsp" />
+	</definition>
+	
+	<definition name="event/roomRes" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박_예약" />
+		<put-attribute name="body" value="/WEB-INF/views/event/roomRes.jsp" />
+	</definition>
+	<definition name="event/reviewForm" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_리뷰" />
+		<put-attribute name="body" value="/WEB-INF/views/event/reviewForm.jsp" />
+	</definition>
+	
+	<definition name="papUp" template="/WEB-INF/views/event/resPay.jsp">
+		<put-attribute name="title" value="결제창" />
+		<put-attribute name="body" value="/WEB-INF/views/event/resPay.jsp" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="side" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="event/resPay" extends="papUp">
+	</definition>
+	
+	<definition name="mypage/mypagemain" extends="baseLayout">
+		<put-attribute name="title" value="마이페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/mypagemain.jsp" />
+	</definition>
+	
+	<definition name="/member/memberDetail" extends="baseLayout">
+		<put-attribute name="title" value="내 정보수정" />
+		<put-attribute name="body" value="/WEB-INF/views/member/memberDetail.jsp" />
+	</definition>
+	
+	<definition name="myreview/review" extends="baseLayout">
+		<put-attribute name="title" value="내가 쓴 리뷰" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/myreview.jsp" />
+	</definition>
+	
+	<definition name="myreview/reviewModForm" extends="baseLayout">
+		<put-attribute name="title" value="내 리뷰 수정" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/reviewModForm.jsp" />
+	</definition>
+	
+	<definition name="myreservation/reservation" extends="baseLayout">
+		<put-attribute name="title" value="내 예약확인" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/myreservation.jsp" />
+	</definition>
+	
+	<definition name="travle/mytravle" extends="baseLayout">
+		<put-attribute name="title" value="내 여행일정" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/mytravle.jsp" />
+	</definition>
+	
+	<definition name="myreservation/airreservation" extends="baseLayout">
+		<put-attribute name="title" value="항공예약보기" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/airreservation.jsp" />
+	</definition>
+	
+	<definition name="mylodreservation/lodreservation" extends="baseLayout">
+		<put-attribute name="title" value="숙소예약보기" />
+		<put-attribute name="body" value="/WEB-INF/views/mypage/lodreservation.jsp" />
+	</definition>
+	
+	<definition name="/tour/tourmain" extends="baseLayout">
+		<put-attribute name="title" value="보멍_관광" />
+		<put-attribute name="body" value="/WEB-INF/views/tour/tourmain.jsp" />
+	</definition>
+	
+	<definition name="/tour/orumm" extends="baseLayout">
+		<put-attribute name="title" value="보멍_오름" />
+		<put-attribute name="body" value="/WEB-INF/views/tour/orumm.jsp" />
+	</definition>
+	
+	<definition name="/tour/beach" extends="baseLayout">
+		<put-attribute name="title" value="보멍_바다" />
+		<put-attribute name="body" value="/WEB-INF/views/tour/beach.jsp" />
+	</definition>
+	
+	<definition name="tour/tourDetail" extends="baseLayout">
+		<put-attribute name="title" value="보멍_상세" />
+		<put-attribute name="body" value="/WEB-INF/views/tour/tourDetail.jsp" />
+	</definition>
+	
+	<definition name="tour/reviewForm" extends="baseLayout">
+		<put-attribute name="title" value="보멍_상세_리뷰" />
+		<put-attribute name="body" value="/WEB-INF/views/tour/reviewForm.jsp" />
+	</definition>
+	
+		<definition name="/activity/activitymain" extends="baseLayout">
+		<put-attribute name="title" value="즐기멍_액티비티" />
+		<put-attribute name="body" value="/WEB-INF/views/activity/activitymain.jsp" />
+	</definition>
+	
+	<definition name="/activity/crs" extends="baseLayout">
+		<put-attribute name="title" value="즐기멍_여행코스" />
+		<put-attribute name="body" value="/WEB-INF/views/activity/crs.jsp" />
+	</definition>
+	
+		<definition name="activity/activityDetail" extends="baseLayout">
+		<put-attribute name="title" value="액티비티_상세" />
+		<put-attribute name="body" value="/WEB-INF/views/activity/activityDetail.jsp" />
+	</definition>
+	
+	<definition name="activity/reviewForm" extends="baseLayout">
+		<put-attribute name="title" value="액티비티_상세_리뷰" />
+		<put-attribute name="body" value="/WEB-INF/views/activity/reviewForm.jsp" />
+	</definition>
+	
+	<definition name="event/lodDetail_hotel" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodDetail_hotel.jsp" />
+	</definition> 
+	
+	<definition name="event/lodDetail_resort" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박_리조트" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodDetail_resort.jsp" />
+	</definition> 
+	
+	<definition name="event/lodDetail_house" extends="baseLayout">
+		<put-attribute name="title" value="이벤트_숙박_펜션" />
+		<put-attribute name="body" value="/WEB-INF/views/event/lodDetail_house.jsp" />
+	</definition> 
+	
+</tiles-definitions>

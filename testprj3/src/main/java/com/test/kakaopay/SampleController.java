@@ -38,6 +38,9 @@ public class SampleController {
 	        log.info("kakaoPaySuccess pg_token : " + pg_token);
 	  
 	        model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
+	        
+	        
+	        //데이터베이스 저장 
 	    }
 	    
 	}

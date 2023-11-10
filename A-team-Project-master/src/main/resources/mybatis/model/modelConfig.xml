@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.spring.project.food.dto.FoodDTO" alias="foodDTO" />
+		<typeAlias type="com.spring.project.member.dto.MemberDTO" alias="memberDTO" />
+		<typeAlias type="com.spring.project.event.dto.AirplaneDTO" alias="airplaneDTO" />
+		<typeAlias type="com.spring.project.event.dto.LodgingDTO" alias="lodgingDTO" />
+		<typeAlias type="com.spring.project.tour.dto.TourDTO" alias="tourDTO" />
+		<typeAlias type="com.spring.project.activity.dto.ActivityDTO" alias="activityDTO" />
+		<typeAlias type="com.spring.project.event.dto.RoomInfoDTO" alias="roomInfoDTO" />
+		<typeAlias type="com.spring.project.event.dto.LodgingResDTO" alias="lodgingResDTO" />
+		<typeAlias type="com.spring.project.event.dto.ResAirplaneDTO" alias="resAirplaneDTO" />
+		<typeAlias type="com.spring.project.mypage.dto.ReviewDTO" alias="myReviewDTO" />
+		<typeAlias type="com.spring.project.mypage.dto.MyReservationDTO" alias="myReservationDTO" />
+		<typeAlias type="com.spring.project.mypage.dto.LodReservationDTO" alias="lodReservationDTO" />
+		<typeAlias type="com.spring.project.mypage.dto.TravleDTO" alias="travleDTO" />
+ 		<typeAlias type="com.spring.project.kakao.vo.KakaoVO" alias="kakaoVO" />
+		<typeAlias type="com.spring.project.mypage.dto.PickDTO" alias="pickDTO" />
+		
+		<!--
+		<typeAlias type="com.spring.project.board.dto.ArticleDTO" alias="articleDTO" />
+		<typeAlias type="com.spring.project.board.dto.ImageDTO" alias="imageDTO" />
+		-->
+	</typeAliases>
+</configuration>

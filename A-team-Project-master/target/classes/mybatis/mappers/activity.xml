@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mapper.activity">
+	<resultMap type="activityDTO" id="activityResult">
+		<result property="ac_no" column="ac_no" />
+		<result property="ac_name" column="ac_name" />
+		<result property="ac_address" column="ac_address" />
+		<result property="ac_open" column="ac_open" />
+		<result property="ac_colse" column="ac_colse" />
+		<result property="ac_score" column="ac_score" />
+		<result property="ac_category" column="ac_category" />
+	</resultMap>
+	
+	<select id="activityList"
+		resultType="com.spring.project.activity.dto.ActivityDTO"
+		parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  f.*, row_number() over(order by ac_no asc) as rNum
+		          FROM activity f
+		          where ac_category like '%'||'체험'||'%' or ac_category like '%'||'액티비티'||'%'  or ac_category like '%'||'행사'||'%'
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+
+	<select id="allActivityCnt" resultType="int">
+		<![CDATA[
+			select count(*) from activity
+			where ac_category like '%' || '체험' || '%' or ac_category like '%' || '액티비티' || '%'  or ac_category like '%'||'행사'||'%'
+		]]>
+	</select>
+	
+	<select id="crsList"
+		resultType="com.spring.project.activity.dto.ActivityDTO"
+		parameterType="java.util.Map">
+		<![CDATA[ 
+			SELECT *
+  				FROM (
+		        SELECT  f.*, row_number() over(order by ac_no asc) as rNum
+		          FROM activity f
+		          where ac_category like '%'||'같이가치'||'%' and ac_title not like '%' || '빈칸채우기' || '%'
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="allCrsCnt" resultType="int">
+		<![CDATA[
+			select count(*) from activity 
+			where ac_category like '%'||'같이가치'||'%' and ac_title not like '%' || '빈칸채우기' || '%'
+		]]>
+	</select>
+
+		<select id="selectac_no" parameterType="int" resultType="com.spring.project.activity.dto.ActivityDTO">
+		<![CDATA[
+			select * from activity where ac_no=#{ac_no}
+		]]>
+	</select>
+	
+	<insert id="addReview" parameterType="com.spring.project.activity.dto.ReviewDTO">
+		<![CDATA[
+			insert into review (re_no, re_score, re_content, id, ac_no) 
+			values(re_seq.nextval, #{re_score}, #{re_content}, #{id}, #{ac_no}) 
+		]]>
+	</insert>
+	
+	<select id="reviewList" parameterType="int" resultType="com.spring.project.activity.dto.ReviewDTO">
+		<![CDATA[
+			select * from review where ac_no=#{ac_no}
+		]]>
+	</select>
+	
+	<insert id="activity_myPick" parameterType="java.util.Map">
+		<![CDATA[
+			insert into mypick(id, ac_no) values(#{id}, #{ac_no})
+		]]>
+	</insert>
+	
+	<delete id="activity_delPick" parameterType="java.util.Map">
+		<![CDATA[
+			delete from mypick where id=#{id} and ac_no=#{ac_no}
+		]]>
+	</delete>
+	
+	<select id="checkPick" parameterType="java.util.Map" resultType="int">
+		<![CDATA[
+			select count(*) from mypick where id=#{id} and ac_no=#{ac_no}
+		]]>
+	</select>
+	
+	<select id="average" parameterType="int" resultType="String">
+		<![CDATA[
+			select avg(re_score) from review where ac_no=#{ac_no}
+		]]>
+	</select>
+</mapper>

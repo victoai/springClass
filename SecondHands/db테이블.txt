@@ -1,0 +1,252 @@
+--------------------------------------- 주문서 테이블
+drop table order_tbl;
+drop sequence seq_order_code;;
+create table order_tbl(
+    order_code varchar2(100) primary key,
+    user_code varchar2(100) not null,
+    user_id varchar2(100) not null,
+    user_nickname varchar2(100) not null,
+    phone_num varchar2(30) not null,
+    board_id varchar2(50) not null,
+    board_title varchar2(200) not null,
+    board_price number(10) not null,  
+    member_post varchar2(500) not null,
+    member_addr varchar2(500) not null,
+    detailed_address varchar2(500) not null,
+    delivery_req varchar2(100) not null,
+    order_date date not null
+);
+create sequence seq_order_code start with 1000;
+select * from order_tbl;
+commit;
+
+
+---------------------------------------상품 목록테이블
+drop table user_board;
+drop sequence seq_board_id;
+drop table user_board cascade constraints;
+create table user_board(
+ 
+   board_id varchar2(50) primary key,
+   board_date date not null,
+   board_title varchar2(200) not null,
+   board_price number(10) not null,
+   board_text varchar2(500) not null,
+   board_img varchar2(500) not null,
+   board_likes number(10) not null,
+   board_soldout number(10)not null,
+   board_click number(10) not null,
+  --지역--
+ loc_code VARCHAR2(255) not null,
+ detail_loc VARCHAR2(255),
+ --유저 code/ 닉네임-------
+ user_code varchar2(100),
+ user_nickname varchar2(100),
+ 
+ --판매분류--
+ board_cate varchar2(20)
+);
+create sequence seq_board_id start with 100;
+select * from user_board;
+commit;
+
+---------------------------------------카테고리 테이블
+drop sequence seq_cate_id;
+drop table cate;
+CREATE TABLE Cate (
+    cate_id VARCHAR2(10) primary key,
+    loc_code VARCHAR2(255) not null,
+    detail_loc VARCHAR2(255)
+);
+create sequence seq_cate_id start with 100;
+-- Cate 테이블에 데이터 추가
+-- 서울
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '강남구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '강서구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '강동구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '강북구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '관악구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '광진구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '구로구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '금천구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '노원구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '도봉구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '동대문구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '동작구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '마포구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '서대문구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '서초구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '성동구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '성북구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '송파구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '양천구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '영등포구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '용산구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '은평구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '종로구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '중구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '서울시', '중랑구');
+-- 제주도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '제주도', '제주시');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '제주도', '서귀포시');
+-- 경기도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '수원');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '성남');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '용인');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '부천');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '안산');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '고양');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '의정부');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경기도', '광명');
+-- 충청도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '대전');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '천안');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '아산');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '공주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '논산');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '보령');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '충청도', '서산');
+-- 경상도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '부산');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '대구');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '울산');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '창원');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '포항');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '진주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '경상도', '김해');
+-- 전라도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '광주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '전주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '목포');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '순천');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '여수');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '나주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '전라도', '군산');
+-- 강원도
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '춘천');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '원주');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '강릉');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '속초');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '동해');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '태백');
+INSERT INTO Cate (cate_id, loc_code, detail_loc) VALUES (seq_cate_id.NEXTVAL, '강원도', '삼척');
+--
+select * from cate;
+commit;
+
+---------------------------------------카카오API테이블
+drop table kakaousertbl;
+create table kakaousertbl(
+id varchar2(50) primary key,
+nickname varchar2(20),
+profile_image varchar2(500)
+);
+select * from kakaousertbl;
+commit;
+
+---------------------------------------주소 테이블 
+drop table addresstbl;
+create table addresstbl(
+member_post varchar2(500) primary key,
+member_addr varchar2(500),
+detailed_address varchar2(500)
+);
+select * from addresstbl;
+
+---------------------------------------사용자 테이블
+drop table user_tbl;
+drop sequence seq_user_code;
+drop table user_tbl cascade constraints;
+ create table user_tbl(
+   user_code varchar2(100) primary key,
+  user_kakao varchar2(100),
+   user_id varchar2(100) unique ,
+   user_pw varchar2(100) not null,
+   
+   address varchar2(500) not null,
+   phone_num varchar2(30) not null,
+
+  member_post varchar2(500) not null,
+  member_addr varchar2(500) not null,
+  detailed_address varchar2(500) not null,
+
+   user_birth varchar2(100) not null,
+   user_nickname varchar2(100) not null,
+   user_image varchar2(500),
+   user_heat varchar2(50) not null 
+);
+create SEQUENCE seq_user_code start with 1000;
+select * from user_tbl;
+commit;
+
+
+------------------------------------------Q&A 테이블
+
+drop table qna_board;
+create table qna_board(
+b_id varchar2(50) primary key,
+b_subject varchar2(100) not null,
+b_contents varchar2(500) not null,
+b_date varchar2(50) not null
+);
+insert into qna_board values('tset1','testsub1','testcontents1',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset2','testsub2','testcontents2',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset3','testsub3','testcontents3',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset4','testsub4','testcontents4',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset5','testsub5','testcontents5',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset6','testsub6','testcontents6',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset7','testsub7','testcontents7',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset8','testsub8','testcontents8',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset9','testsub9','testcontents9',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset10','testsub10','testcontents10',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset11','testsub11','testcontents11',to_char(sysdate,'YY/MM/DD'));
+insert into qna_board values('tset12','testsub12','testcontents12',to_char(sysdate,'YY/MM/DD'));
+commit;
+select * from qna_board;
+
+
+-------------------------------------------------- 게시글 좋아요 테이블
+
+drop table board_like;
+drop table board_like cascade constraints;
+drop sequence seq_board_like;
+
+-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ좋아요 테이블
+drop table board_like;
+CREATE TABLE board_like (
+    like_id NUMBER PRIMARY KEY,
+    board_id VARCHAR2(50),
+    user_id VARCHAR2(100),
+    FOREIGN KEY (board_id) REFERENCES user_board(board_id),
+    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id)
+);
+create sequence seq_board_like start with 1;
+INSERT INTO board_like
+    VALUES (seq_board_like.nextval,'183', 'qudwls');
+select * from board_like;
+commit;
+
+
+-----------------------------------------------------  테스트용
+select * from user_board;
+select * from user_tbl;
+        SELECT COUNT(*) AS likeCount
+        FROM board_like
+        WHERE board_id = "209";
+
+-----------------------------------------------------  좋아요 토글 기능
+INSERT INTO board_like
+    VALUES (seq_board_like.nextval,'183', 'qudwls');
+SELECT * FROM board_like
+WHERE user_id ='qudwls' and board_id ='183';
+delete from board_like where user_id ='qudwls' and board_id ='183';
+SELECT CASE
+  WHEN COUNT(*) > 0 THEN 1
+  ELSE 0
+END AS result
+FROM board_like
+WHERE user_id = 'qudwls' AND board_id = '183';
+
+commit;
+
+----------------------------------------------------

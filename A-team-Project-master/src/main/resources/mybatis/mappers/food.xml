@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+<mapper namespace="mapper.food">
+	<resultMap type="foodDTO" id="foodResult">
+		<result property="fd_no" column="fd_no" />
+		<result property="fd_name" column="fd_name" />
+		<result property="fd_address" column="fd_address" />
+		<result property="fd_open" column="fd_open" />
+		<result property="fd_colse" column="fd_colse" />
+		<result property="fd_score" column="fd_score" />
+		<result property="fd_category" column="fd_category" />
+	</resultMap>
+	
+
+	<select id="selectfd_no" parameterType="int" resultType="com.spring.project.food.dto.FoodDTO">
+		<![CDATA[
+			select * from food where fd_no=#{fn_no}
+		]]>
+	</select>
+	
+	<insert id="addReview" parameterType="com.spring.project.food.dto.ReviewDTO">
+		<![CDATA[
+			insert into review (re_no, re_score, re_content, id, fd_no) 
+			values(re_seq.nextval, #{re_score}, #{re_content}, #{id}, #{fd_no}) 
+		]]>
+	</insert>
+	
+ 	<insert id="dbInsert" parameterType="com.spring.project.food.dto.FoodDTO">
+		<![CDATA[
+			insert into food values(fd_seq.nextval, #{fd_title}, #{fd_info}, 
+			#{fd_address}, #{fd_roadAddress}, #{fd_phoneNo}, #{fd_imgPath}, #{fd_thumbnailPath}, #{fd_category})		
+		]]>
+	</insert>
+	
+	<select id="foodList" resultType="com.spring.project.food.dto.FoodDTO" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  f.*, row_number() over(order by fd_no asc) as rNum
+		          FROM food f
+		          where not (fd_category like '%'||'카페'||'%' or fd_category like '%'||'커피'||'%')
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="allFoodCnt" resultType="int">
+		<![CDATA[
+			select count(*) from food 
+			where not (fd_category like '%' || '카페' || '%' or fd_category like '%' || '커피' || '%')
+		]]>
+	</select>
+	<select id="cafeList" resultType="com.spring.project.food.dto.FoodDTO" parameterType="java.util.Map">
+		<![CDATA[ 
+			SELECT *
+  				FROM (
+		        SELECT  f.*, row_number() over(order by fd_no asc) as rNum
+		          FROM food f
+		          where (fd_category like '%'||'카페'||'%' or fd_category like '%'||'커피'||'%')
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	<select id="allCafeCnt" resultType="int">
+		<![CDATA[
+			select count(*) from food 
+			where fd_category like '%' || '카페' || '%' or fd_category like '%' || '커피' || '%'
+		]]>
+	</select>
+	
+	<select id="reviewList" parameterType="int" resultType="com.spring.project.food.dto.ReviewDTO">
+		<![CDATA[
+			select * from review where fd_no=#{fd_no}
+		]]>
+	</select>
+	
+	<insert id="myPick" parameterType="java.util.Map">
+		<![CDATA[
+			insert into mypick(id,fd_no) values(#{id},#{fd_no})
+		]]>
+	</insert>
+	
+	<delete id="delPick" parameterType="java.util.Map">
+		<![CDATA[
+			delete from mypick where id=#{id} and fd_no=#{fd_no}
+		]]>
+	</delete>
+	
+	<select id="checkPick" parameterType="java.util.Map" resultType="int">
+		<![CDATA[
+			select count(*) from mypick where id=#{id} and fd_no=#{fd_no}
+		]]>
+	</select>
+	
+	<select id="average" parameterType="int" resultType="String">
+		<![CDATA[
+			select avg(re_score) from review where fd_no=#{fd_no}
+		]]>
+	</select>
+</mapper>
+

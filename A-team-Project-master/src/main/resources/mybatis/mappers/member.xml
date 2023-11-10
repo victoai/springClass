@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+
+
+	<resultMap type="memberDTO" id="memResult">
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="age" column="age" />
+		<result property="gender" column="gender" />
+		<result property="tel" column="tel" />
+		<result property="email" column="email" />
+	</resultMap>
+
+	<insert id="insertMember" parameterType="memberDTO">
+		<![CDATA[
+			insert into member values(#{id}, #{pwd}, #{name}, #{age}, #{gender}, #{tel}, #{email})
+		]]>
+	</insert>
+	 
+	<select id="idChk" parameterType="String" resultType="int">
+		<![CDATA[
+			select count(*) from member where id=#{id}
+		]]>
+	</select>
+	 
+
+	<update id="updateMember" parameterType="memberDTO">
+		<![CDATA[
+			update member set pwd=#{pwd}, name=#{name}, email=#{email}, age=#{age}, tel=#{tel}
+			, gender=#{gender} where id=#{id}
+		]]>
+	</update>
+
+	<delete id="deleteMember" parameterType="String">
+		<![CDATA[
+			delete from member where id=#{id}
+		]]>
+	</delete>
+	
+	<!--
+	<select id="selectAllMemberList" resultMap="memResult">
+		<![CDATA[
+			select * from member
+		]]>
+	</select>
+	
+	
+	<select id="quiz01" resultMap="memResult">
+		<![CDATA[
+			select * from member where pwd='1212'
+		]]>
+	</select>
+	
+
+	
+	<select id="selectName" resultType="String">
+		<![CDATA[
+			select name from member where id='hong'
+		]]>
+	</select>
+	 
+	<select id="selectPwd" resultType="int">
+		<![CDATA[
+			select pwd from member where id='hong'
+		]]>
+	</select>
+	 
+
+	<select id="selectMemberById" resultType="memberDTO"
+		parameterType="String">
+		<![CDATA[
+			select * from member where id=#{id}
+		]]>
+	</select>
+
+	<select id="selectMemberByPwd" resultMap="memResult"
+		parameterType="int">
+		<![CDATA[
+			select * from member where pwd=#{pwd}
+		]]>
+	</select>
+	-->
+
+	<!-- 
+	<select id="searchMember" parameterType="memberDTO"
+		resultMap="memResult">
+		<![CDATA[
+			select * from member
+		]]>
+		<where>
+			<if test="name != '' and name != null">
+				name = #{name}
+			</if>
+			<if test="email != '' and email != null">
+				and email = #{email}
+			</if>
+		</where>
+		order by joinDate desc
+	</select>
+
+	<select id="searchMember2" parameterType="memberDTO"
+		resultMap="memResult">
+		<![CDATA[
+			select * from member
+		]]>
+		<where>
+			<choose>
+				<when
+					test="name != null and name != '' and email !='' and email !=null">
+					name=#{name} and email=#{email}
+				</when>
+				<when test="name != null and name != ''">
+					name=#{name}
+				</when>
+				<when test="email != null and email != ''">
+					email=#{email}
+				</when>
+			</choose>
+		</where>
+		order by joinDate desc
+	</select>
+
+	<sql id="select">
+		<![CDATA[
+			select * from member
+		]]>
+	</sql>
+
+	<select id="foreachSelect" resultMap="memResult"
+		parameterType="java.util.Map">
+		<include refid="select" />
+		where name in
+		<foreach collection="list" item="item" open="(" close=")"
+			separator=",">
+			#{item}
+		</foreach>
+		order by joinDate desc
+	</select>
+
+	<insert id="foreachInsert" parameterType="java.util.Map">
+		<foreach collection="list" item="item" open="insert all"
+			separator=" " close="select * from dual">
+			into member(id, pwd, name, email)
+			values
+			(#{item.id}, #{item.pwd}, #{item.name}, #{item.email})
+		</foreach>
+	</insert>
+
+	<select id="selectLike" resultMap="memResult"
+		parameterType="String">
+		<include refid="select" />
+		where name like '%'||#{name}||'%'
+	</select>
+	-->
+	
+
+	<select id="loginById" parameterType="memberDTO" resultType="memberDTO">
+		<![CDATA[
+			select * from member where id=#{id} and pwd=#{pwd}
+		]]>
+	</select>
+
+	<select id="findId" parameterType="memberDTO" resultType="String">
+		<![CDATA[
+			select id from member where name=#{name} and tel=#{tel}
+		]]>
+	</select>
+
+	<select id="findPwd" parameterType="memberDTO" resultType="String">
+		<![CDATA[
+			select pwd from member where id=#{id} and name=#{name} and tel=#{tel}
+		]]>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -62,8 +62,16 @@ function geoFindMe() {
     alert('사용중인 브라우저에서는 위치 정보를 이용할 수 없습니다.');
   } else {
     navigator.geolocation.getCurrentPosition((position) => {
+    
+    
+     
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      
+      alert( latitude);
+      alert( longitude);
+      
+      
       $('#data_div').html('<li data-latitude=' + latitude + ' data-longitude=' + longitude + '>');
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {

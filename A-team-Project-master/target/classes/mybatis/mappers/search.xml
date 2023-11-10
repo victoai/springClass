@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.search">	
+	<select id="foodSearch" resultType="foodDTO" parameterType="String">
+		<![CDATA[
+			select * from food where
+				(fd_title like '%'||#{search}||'%' or 
+				fd_info like '%'||#{search}||'%' or 
+				fd_address like '%'||#{search}||'%' or 
+				fd_roadaddress like '%'||#{search}||'%' or 
+				fd_phoneno like '%'||#{search}||'%' or 
+				fd_category like '%'||#{search}||'%') order by fd_no asc
+		]]> 
+	</select>
+	<select id="lodgingSearch" resultType="lodgingDTO" parameterType="String">
+		<![CDATA[
+			select * from lodging_list l,lodging_info i where l.lod_id = i.lod_id and
+				(l.lod_title like '%'||#{search}||'%' or 
+				i.lod_address like '%'||#{search}||'%' or 
+				i.lod_info like '%'||#{search}||'%' or 
+				i.lod_tel like '%'||#{search}||'%' or 
+				i.lod_homePage like '%'||#{search}||'%') order by l.lod_id asc
+		]]> 
+	</select>
+	<select id="activitySearch" resultType="activityDTO" parameterType="String">
+		<![CDATA[
+			select * from activity where
+				(ac_title like '%'||#{search}||'%' or 
+				ac_info like '%'||#{search}||'%' or 
+				ac_address like '%'||#{search}||'%' or 
+				ac_roadaddress like '%'||#{search}||'%' or 
+				ac_phoneno like '%'||#{search}||'%' or 
+				ac_category like '%'||#{search}||'%') order by ac_no asc
+		]]> 
+	</select>
+	<select id="tourSearch" resultType="tourDTO" parameterType="String">
+		<![CDATA[
+			select * from tour where
+				(tr_title like '%'||#{search}||'%' or 
+				tr_info like '%'||#{search}||'%' or 
+				tr_address like '%'||#{search}||'%' or 
+				tr_roadaddress like '%'||#{search}||'%' or 
+				tr_phoneno like '%'||#{search}||'%' or 
+				tr_category like '%'||#{search}||'%') order by tr_no asc
+		]]> 
+	</select>
+</mapper>

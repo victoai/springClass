@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="mapper.event">
+	<resultMap type="airPlaneDTO" id="airResult">
+		<result property="air_no" column="air_no" />
+		<result property="air_airline" column="air_airline" />
+		<result property="air_date" column="air_date" />
+		<result property="air_departPlace" column="air_departPlace" />
+		<result property="air_arrivalPlace" column="air_arrivalPlace" />
+		<result property="air_departTime" column="air_departTime" />
+		<result property="air_arrivalTime" column="air_arrivalTime" />
+		<result property="air_price" column="ir_price" />
+	</resultMap>
+
+	
+	<select id="selectairList" parameterType="airplaneDTO" resultType="com.spring.project.event.dto.AirplaneDTO">
+		<![CDATA[
+			select * from airplane where air_departPlace=#{air_departPlace} and 
+			air_arrivalPlace=#{air_arrivalPlace} and air_date=#{air_date}
+		]]>
+	</select>
+	
+	<select id="selectairList2" parameterType="airplaneDTO" resultType="com.spring.project.event.dto.AirplaneDTO">
+		<![CDATA[
+			select * from airplane where air_departPlace=#{air_arrivalPlace} and 
+			air_arrivalPlace=#{air_departPlace} and air_date=#{air_date}
+		]]>
+	</select>
+
+	<select id="selectAir_no_from" parameterType="int" resultType="airplaneDTO">
+		<![CDATA[
+			select * from airplane where air_no=#{air_no_from}
+		]]>
+	</select>
+	
+		<select id="selectAir_no_to" parameterType="int" resultType="airplaneDTO">
+		<![CDATA[
+			select * from airplane where air_no=#{air_no_to}
+		]]>
+	</select>
+	
+	<delete id="resetAir">
+		<![CDATA[
+			delete from airplane
+		]]>
+	</delete>
+	
+	<insert id="addAirplane" parameterType="airplaneDTO">
+		<![CDATA[
+			insert into airplane values(#{air_no},#{air_airline},#{air_date},
+			#{air_departTime},#{air_arrivalTime},#{air_departPlace},#{air_arrivalPlace},#{air_price})
+		]]>
+	</insert>
+	
+	<select id="airListFrom" resultType="airplaneDTO">
+		<![CDATA[
+			select * from (select * from airplane where 
+				air_airline='아시아나 항공' or air_airline='진에어' or air_airline='에어부산' or 
+				air_airline='대한항공' or air_airline='플라이강원') 
+			where air_no >= 100 and air_no < 499 order by air_no asc
+		]]>
+	</select>
+	<select id="airListTo" resultType="airplaneDTO">
+		<![CDATA[
+			select * from (select * from airplane where 
+				air_airline='아시아나 항공' or air_airline='진에어' or air_airline='에어부산' or 
+				air_airline='대한항공' or air_airline='플라이강원') 
+			where air_no >= 500 and air_no < 1000 order by air_no asc
+		]]>
+	</select>
+	
+	<select id="selectAir" parameterType="int" resultType="resAirplaneDTO">
+		<![CDATA[
+			select * from airplane where air_no=#{air_no}
+		]]>
+	</select>
+	
+	<insert id="resAirplane" parameterType="resAirplaneDTO">
+		<![CDATA[
+			insert into airplane_res values(
+			res_air_seq.nextval,#{air_airline},#{air_date},#{air_departTime},
+			#{air_arrivalTime},#{air_departPlace},#{air_arrivalPlace},
+			#{air_price},#{id},#{name},#{birth},#{payment})
+		]]>
+	</insert>
+	
+	<select id="allLodCnt" resultType="int">
+		<![CDATA[
+			select count(*) from lodging_list
+		]]>
+	</select>
+	
+	<select id="lodList" resultType="com.spring.project.event.dto.LodgingDTO" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  l.*, row_number() over(order by lod_id asc) as rNum
+		          FROM lodging_list l
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="lodDetail" parameterType="int" resultType="com.spring.project.event.dto.LodgingDTO">
+		<![CDATA[
+			select * from lodging_list a,lodging_info b where a.lod_id = b.lod_id and a.lod_id = #{lod_id}
+		]]>
+	</select>
+	
+	<select id="roomList" parameterType="int" resultType="roomInfoDTO">
+		<![CDATA[
+			select * from room_info where lod_id = #{lod_id}
+		]]>
+	</select>
+	
+	<select id="roomInfo" parameterType="roomInfoDTO" resultType="roomInfoDTO">
+		<![CDATA[
+			select * from room_info where lod_id=#{lod_id} and r_title=#{r_title}
+		]]>
+	</select>
+	
+	<insert id="addLodRes" parameterType="lodgingResDTO">
+		<![CDATA[
+			insert into lodging_res values
+				(#{lod_id},#{id},#{res_name},#{res_tel},#{lod_title},#{r_title},#{lod_checkIn},#{lod_checkOut},
+				#{res_from},#{res_to},#{payment},#{price})
+		]]>
+	</insert>
+	
+		<insert id="lod_myPick" parameterType="java.util.Map">
+		<![CDATA[
+			insert into mypick(id, lod_id) values(#{id}, #{lod_id})
+		]]>
+		</insert>
+	
+	<delete id="lod_delPick" parameterType="java.util.Map">
+		<![CDATA[
+			delete from mypick where id=#{id} and lod_id=#{lod_id}
+		]]>
+	</delete>
+	
+	<select id="checkPick" parameterType="java.util.Map" resultType="int">
+		<![CDATA[
+			select count(*) from mypick where id=#{id} and lod_id=#{lod_id}
+		]]>
+	</select>
+	
+	<insert id="addReview" parameterType="com.spring.project.event.dto.ReviewDTO">
+		<![CDATA[
+			insert into review (re_no, re_score, re_content, id, lod_id) 
+			values(re_seq.nextval, #{re_score}, #{re_content}, #{id}, #{lod_id}) 
+		]]>
+	</insert>
+	
+	<select id="reviewList" parameterType="int" resultType="com.spring.project.event.dto.ReviewDTO">
+		<![CDATA[
+			select * from review where lod_id=#{lod_id}
+		]]>
+	</select>
+	
+	<select id="allHotelCnt" resultType="int">
+		<![CDATA[
+			select count(*) from lodging_list where lod_title like '%' || '호텔' || '%'
+		]]>
+	</select>
+	
+	<select id="hotelList" resultType="com.spring.project.event.dto.LodgingDTO" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  h.*, row_number() over(order by lod_id asc) as rNum
+		          FROM lodging_list h
+		          where lod_title like '%' || '호텔' || '%'
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="allResortCnt" resultType="int">
+		<![CDATA[
+			select count(*) from lodging_list where lod_title like '%' || '리조트' || '%'
+		]]>
+	</select>
+	
+	<select id="resortList" resultType="com.spring.project.event.dto.LodgingDTO" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  r.*, row_number() over(order by lod_id asc) as rNum
+		          FROM lodging_list r
+		          where lod_title like '%' || '리조트' || '%'
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="allHouseCnt" resultType="int">
+		<![CDATA[
+			select count(*) from lodging_list where not (lod_title like '%' || '호텔' || '%' or lod_title like '%' || '리조트' || '%')
+		]]>
+	</select>
+	
+	<select id="houseList" resultType="com.spring.project.event.dto.LodgingDTO" parameterType="java.util.Map">
+		<![CDATA[
+			SELECT *
+  				FROM (
+		        SELECT  r.*, row_number() over(order by lod_id asc) as rNum
+		          FROM lodging_list r
+		          where not (lod_title like '%' || '호텔' || '%' or lod_title like '%' || '리조트' || '%')
+		        ) 
+		   WHERE rNum between #{start} and #{end}
+		]]>
+	</select>
+	
+	<select id="average" parameterType="int" resultType="String">
+		<![CDATA[
+			select avg(re_score) from review where lod_id=#{lod_id}
+		]]>
+	</select>
+</mapper>

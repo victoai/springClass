@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+// 이벤트 객체의 이름이   event 
+
+
+//이벤트핸들러 함수의 첫번째 매개변수로    event객체가 전달된다
+function a(){
+	alert("fgfgf");
+	console.log( event);
+}
+
+
+function b(e){
+	alert("fgfgf");
+	console.log( e);
+}
+</script>
+</head>
+<body>
+
+
+기초적인 event를 알고 ,  event handler를  element에 적용할 수 있다
+onclick event 
+onclick 에 직접할당하는것과   addEventListener의 차이 알기 
+eventHandler함수를 만들고,  eventHandler의 첫번째 인자를 사용할 줄 안다 
+ 
+
+이벤트 객체란?
+
+사용자 버튼을 클릭하면 그 버튼의  textContent 또는 innerHTML을 이용해 메뉴의  이름을 
+가져올 수 있습니다
+다시말해 이벤트 객체는 사용자입력  onclick, onkeyup , onscroll등 을  트리거로 발생한 
+이벤트 정보를 담은 객체
+
+
+
+
+
+
+
+<input type="text"  onkeyup="a()" >
+<input type="text"  onkeyup="b(event)" >
+</body>
+</html>

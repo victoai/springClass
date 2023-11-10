@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="uploadSample"/>
-<aop-project name="visitKorea"/>
 <aop-project name="testprj3"/>
+<aop-project name="visitKorea"/>
 <aop-project name="testprj"/>
+<aop-project name="eventPrj"/>
 <aop-project name="CornMarket"/>
 <aop-project name="jtPrj"/>
 <aop-project name="batisPrj2"/>
 <aop-project name="batisPrj"/>
 <aop-project name="day1"/>
 <aop-project name="day9"/>
+<aop-project name="kakaPay"/>
+<aop-project name="nj"/>
 <aop-project name="test"/>
 <aop-project name="cartBatis"/>
 <aop-project name="transPrj"/>
@@ -20,7 +23,11 @@
 <aop-project name="day5Exception"/>
 <aop-project name="di"/>
 <aop-project name="e"/>
+<aop-project name="formAjax"/>
 <aop-project name="intercepterPrj"/>
+<aop-project name="SecondHands"/>
+<aop-project name="firstP"/>
+<aop-project name="mapPrj2"/>
 <aop-project name="batisPrac"/>
 <aop-project name="cookiPrj"/>
 <aop-project name="uploadTestPrj"/>
@@ -30,6 +37,7 @@
 <aop-project name="mgPrj"/>
 <aop-project name="day7intefacePrj"/>
 <aop-project name="testprj2"/>
+<aop-project name="aaa"/>
 <aop-project name="tranPrj"/>
 <aop-project name="helloPrj"/>
 <aop-project name="webchat"/>
