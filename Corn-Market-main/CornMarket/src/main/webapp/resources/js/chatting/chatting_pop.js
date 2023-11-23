@@ -38,6 +38,7 @@ function onOpen(evt) {
   send('enter', '');
   //alert('연결되었습니다');
 }
+
 // 웹소켓 서버에서 메시지를 받았을 때 호출되는 이벤트
 function onMessage(evt) {
   let id = $('#user_id').val();

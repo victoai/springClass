@@ -12,8 +12,7 @@ public class homePageController {
 	@RequestMapping("/homePage")
 	public String homePage() {
 
-		//return "/homePage/homePage";
-		
+		//return "/homePage/homePage";		
 		 return "homePage2";
 	}
 
